@@ -47,9 +47,21 @@ public class QKSort {
 				i++;
 			}
 			if(i < j) {
-				
+				t = a[i];
+				a[i] = a[j];
+				a[j] = t;
+			  }
 			}
-		}
+			a[left] = a[i];
+			a[i] = temp;
+		
+		quicksort(a, left, i-1);
+		quicksort(a, i+1, right);
+	}
+	
+	public void Quicksort() {
+		int []a = this.array;
+		quicksort(a, 0, a.length-1);
 	}
 	
 	//end practice¡£
@@ -58,7 +70,9 @@ public class QKSort {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		QKSort arr = new QKSort(123456);
+		QKSort arr = new QKSort(143652);
+		arr.print();
+		arr.Quicksort();
 		arr.print();
 		
 	}
